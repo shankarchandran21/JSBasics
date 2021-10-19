@@ -165,8 +165,6 @@ console.log(Appender);
 //Calculate the Power of a Number
 
 var a = 12;
-var b = 2;
-
 for (var i = 1; i <= 12; i++) {
     a = a * i
     console.log(a);
@@ -183,5 +181,198 @@ var a = parseInt(Appender)
 if (a == orginal) {
     console.log("It's Palindrome:" + a)
 } else {
-    typeof console.log("It's not Palindrome:" + a)
+    console.log("It's not Palindrome:" + a)
 }
+//Check Whether a Number is Prime or Not
+var a = 9;
+var b = false;
+
+for (var i = 2; i <= a; i++) {
+    if (a != i) {
+        if (a % i != 0) {
+            b = true;
+        } else {
+            b = false;
+            break;
+        }
+    } else {
+        b = true;
+        break;
+    }
+}
+
+if (b == true) {
+    console.log(a + " is prime number");
+} else {
+    console.log(a + " is Not prime number");
+}
+//Display Prime Numbers Between Two Intervals
+var start = 10;
+var end = 20;
+for (var j = start; j <= end; j++) {
+    for (var i = 2; i <= j; i++) {
+        if (j != i) {
+            if (j % i != 0) {
+                b = true;
+            } else {
+                b = false;
+                break;
+            }
+        } else {
+            b = true;
+            break;
+        }
+    }
+    if (b == true) {
+        console.log(j + " is prime number");
+    } else {
+        console.log(j + " is Not prime number");
+    }
+}
+//Check Armstrong Number
+var a = 370;
+var oprn = a
+var temp = 0;
+while (oprn > 0) {
+    b = oprn % 10;
+    temp = temp + (b * b * b);
+    oprn = parseInt(oprn / 10);
+}
+if (temp == a) {
+    console.log(a + " is an ArmstrongNumber")
+} else {
+    console.log(a + " is not an ArmstrongNumber")
+}
+
+//Display Armstrong Number Between Two Intervals
+
+var start = 370;
+var end = 380;
+
+
+for (i = start; i <= end; i++) {
+    var a = i;
+    var temp = 0;
+    while (a > 0) {
+        b = a % 10;
+        temp = temp + (b * b * b);
+        a = parseInt(a / 10);
+
+    }
+    if (temp == i) {
+        console.log(i + " is an ArmstrongNumber")
+    } else {
+        console.log(i + " is not an ArmstrongNumber")
+    }
+}
+
+//Display Factors of a Number
+
+var a = 12;
+
+for (i = 1; i <= a; i++) {
+    if (a % i == 0) {
+        console.log(i)
+    }
+}
+
+//Display Prime Numbers Between Intervals Using Function
+var start = 2;
+var end = 10;
+for (j = start; j <= end; j++) {
+    var b = false;
+
+    for (var i = start; i <= end; i++) {
+        if (j != i) {
+            if (j % i != 0) {
+                b = true;
+            } else {
+                b = false;
+                break;
+            }
+        } else {
+            b = true;
+            break;
+        }
+    }
+
+    if (b == true) {
+        console.log(j + " is prime number");
+    } else {
+        console.log(j + " is Not prime number");
+    }
+}
+
+//Convert Binary Number to Decimal and vice-versa
+
+
+var binary = 101101;
+var power = 0;
+var a = 0;
+
+while (binary > 0) {
+    var reminder = binary % 10;
+    a = a + (parseInt(reminder * Math.pow(2, power)));
+    power++;
+    binary = parseInt(binary / 10);
+}
+console.log(a)
+
+//Convert Octal Number to Decimal and vice-versa
+
+var binary = 370;
+var power = 0;
+var a = 0;
+
+while (binary > 0) {
+    var reminder = binary % 10;
+    a = a + (parseInt(reminder * Math.pow(8, power))); //Math.pow is used for power.
+    power++;
+    binary = parseInt(binary / 10);
+}
+console.log(a)
+
+//calculater
+
+var a = 5;
+var b = 6;
+var cal;
+var close = false;
+
+function add() {
+    return parseInt(a + b);
+}
+
+function sub() {
+    return parseInt(a - b);
+}
+
+function multiply() {
+    return parseInt(a * b);
+}
+
+function div() {
+    if (a == 0 || b == 0) {
+        close;
+    } else {
+        return parseInt(a / b);
+    }
+}
+
+function calculater() {
+    switch (cal) {
+        case 1:
+            add()
+            break;
+        case 2:
+            sub()
+            break;
+        case 3:
+            multiply()
+            break;
+        case 4:
+            div()
+            break;
+    }
+}
+calculater();
